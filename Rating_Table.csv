@@ -1,0 +1,6 @@
+Region,Country,Company name,Company number,Company code,Company features,Receiving call cost per min,Local call cost per min,Calling to ME cost per min,Calling to other destinations cost per min,SMS  MO cost per sms,SMS MT cost per sms,Data cost per MB
+Asia Pacific ,Afghanistan,MTN,412-40,AFGAR,900/1800,5,1,2,10,4,0,3
+Europe,Aland,Alcom,244-14,FINAM,900/3G,0,0,0,0,0,0,0
+Europe,Aland,Sonera,244-91,FINTF,900/3G/4G 800/1800/2600,0,0,0,0,0,0,0
+Europe,Albania,Vodafone,276-02,ALBVF,4G 2600 ,8,1,2,3,0,0,0
+ROW,,,,,,0,0,0,0,0,0,0

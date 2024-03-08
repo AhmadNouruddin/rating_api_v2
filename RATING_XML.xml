@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rating_table_file>
+  <DocumentHeader>
+    <VPMN>{{ company_code }}</VPMN>
+    <HPMN>{{ hpmn }}</HPMN>
+    <Sender>{{ company_code }}</Sender>
+    <Recipient>{{ hpmn }}</Recipient>
+    <FileType>IOT</FileType>
+    <EffectiveDate>{{ effective_date }}</EffectiveDate>
+    <SubmissionDT>{{ submission_dt }}</SubmissionDT>
+    <IOTIdentifier>{{ iot_identifier }}</IOTIdentifier>
+    <CorrectionSequence>{{ correction_sequence }}</CorrectionSequence>
+    <TypeOfIOT>
+      <StandardIOT/>
+    </TypeOfIOT>
+    <TypeOfChange>
+      <Standard>First</Standard>
+    </TypeOfChange>
+    <PublishComment>This is a RAEX IOT 5.0 document for {{ company_code }}</PublishComment>
+    <InternalReferenceId>{{ company_code }}</InternalReferenceId>
+    <IotSchemaVersion>5.0</IotSchemaVersion>
+    <TADIGGenSchemaVersion>2.4</TADIGGenSchemaVersion>
+  </DocumentHeader>
+  <CurrencyInfo>
+    <IOTCurrency>{{ iot_currency }}</IOTCurrency>
+  </CurrencyInfo>
+  <TaxDefinition>
+    <TaxNotApplicable/>
+  </TaxDefinition>
+  <TimeBandList>
+    <TimeBand>
+      <tadig-raex-iot:TimeBandName>Peak</tadig-raex-iot:TimeBandName>
+      <TBDefList>
+        <TBDefinition endTime="17:59:59" startTime="06:00:00">
+          <WeekDays>
+            <None/>
+          </WeekDays>
+          <SpecialDays>
+            <All/>
+          </SpecialDays>
+        </TBDefinition>
+      </TBDefList>
+    </TimeBand>
+    <TimeBand>
+      <tadig-raex-iot:TimeBandName>Off Peak</tadig-raex-iot:TimeBandName>
+      <TBDefList>
+        <TBDefinition endTime="23:59:59" startTime="18:00:00">
+          <WeekDays>
+            <None/>
+          </WeekDays>
+          <SpecialDays>
+            <None/>
+          </SpecialDays>
+        </TBDefinition>
+        <TBDefinition endTime="05:59:59" startTime="00:00:00">
+          <WeekDays>
+            <None/>
+          </WeekDays>
+          <SpecialDays>
+            <None/>
+          </SpecialDays>
+        </TBDefinition>
+        <TBDefinition endTime="23:59:59" startTime="00:00:00">
+          <WeekDays>
+            <None/>
+          </WeekDays>
+          <SpecialDays>
+            <None/>
+          </SpecialDays>
+        </TBDefinition>
+      </TBDefList>
+    </TimeBand>
+    <TimeBand>
+      <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+      <TBDefList>
+        <TBDefinition endTime="23:23:59" startTime="00:00:00">
+          <WeekDays>
+            <All/>
+          </WeekDays>
+          <SpecialDays>
+            <All/>
+          </SpecialDays>
+        </TBDefinition>
+      </TBDefList>
+    </TimeBand>
+  </TimeBandList>
+  <DestBandDefList>
+    <DestBand>
+      <tadig-raex-iot:DestinationBandName>National</tadig-raex-iot:DestinationBandName>
+      <tadig-raex-iot:DestinationList>
+        <tadig-raex-iot:Destination>
+          <Name>{{ country }}</Name>
+          <CountryCode>{{ company_number }}</CountryCode>
+        </tadig-raex-iot:Destination>
+      </tadig-raex-iot:DestinationList>
+    </DestBand>
+    <DestBand>
+      <tadig-raex-iot:DestinationBandName>Calling to Hong Kong</tadig-raex-iot:DestinationBandName>
+      <tadig-raex-iot:DestinationList>
+        <tadig-raex-iot:Destination>
+          <Name>Hong Kong</Name>
+          <CountryCode>852</CountryCode>
+        </tadig-raex-iot:Destination>
+      </tadig-raex-iot:DestinationList>
+    </DestBand>
+    <DestBand>
+      <tadig-raex-iot:DestinationBandName>RotW</tadig-raex-iot:DestinationBandName>
+      <RestOfWorld/>
+    </DestBand>
+  </DestBandDefList>
+  <APNBandList>
+    <APNBand>
+      <APNBandName>Others</APNBandName>
+      <AllOtherAPN/>
+    </APNBand>
+  </APNBandList>
+  <ChargingPolicy>
+    <ChannelSeizureCharged>false</ChannelSeizureCharged>
+    <SegmentationRule>
+      <NoSegRule/>
+    </SegmentationRule>
+    <UnsuccessfulCallAttempts>
+      <NoUCA/>
+    </UnsuccessfulCallAttempts>
+    <WLANSessionSetupAttempt>
+      <NoWSSA/>
+    </WLANSessionSetupAttempt>
+    <tadig-raex-iot:PSDataHandling>
+      <NotAvailablePSData/>
+    </tadig-raex-iot:PSDataHandling>
+  </ChargingPolicy>
+  <tadig-raex-iot:CallTypes>
+    <MOC>
+      <DurRatingIntervalList>
+        <DurRatingInterval>
+          <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
+          <DurIntervalList>
+            <DurInterval applicator="0" scaleUnit="min" scaleValue="1"/>
+          </DurIntervalList>
+        </DurRatingInterval>
+      </DurRatingIntervalList>
+      <NormalizedPriceDef scaleUnit="min" scaleValue="1"/>
+      <Services>
+        <ServiceList>
+          <MOService>Telephony</MOService>
+        </ServiceList>
+        <LocationRoamerList>
+          <LocationRoamer>
+            <LocationDefinition>
+              <AnyLocation/>
+            </LocationDefinition>
+            <DestinationBandList>
+              <DestinationBand>
+                <tadig-raex-iot:DestinationBandName>National</tadig-raex-iot:DestinationBandName>
+                <CTLSetList>
+                  <CTLSet ctl1="1" ctl2="1" ctl3="3">
+                    <IACInfo>
+                      <AnyIAC>
+                        <ApplicableTBList>
+                          <AppTB>
+                            <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+                            <ChargedItemList>
+                              <ChargedItem>
+                                <DurationChargedItem>
+                                  <tadig-raex-iot:RateSpecList>
+                                    <RateSpec chargeType="00">
+                                      <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
+                                      <tadig-raex-iot:Rate type="I">{{ local_call_cost_per_min }}</tadig-raex-iot:Rate>
+                                    </RateSpec>
+                                  </tadig-raex-iot:RateSpecList>
+                                </DurationChargedItem>
+                              </ChargedItem>
+                            </ChargedItemList>
+                          </AppTB>
+                        </ApplicableTBList>
+                      </AnyIAC>
+                    </IACInfo>
+                  </CTLSet>
+                </CTLSetList>
+              </DestinationBand>
+              <DestinationBand>
+                <tadig-raex-iot:DestinationBandName>Calling to Hong Kong</tadig-raex-iot:DestinationBandName>
+                <CTLSetList>
+                  <CTLSet ctl1="2" ctl2="2" ctl3="2">
+                    <IACInfo>
+                      <AnyIAC>
+                        <ApplicableTBList>
+                          <AppTB>
+                            <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+                            <ChargedItemList>
+                              <ChargedItem>
+                                <DurationChargedItem>
+                                  <tadig-raex-iot:RateSpecList>
+                                    <RateSpec chargeType="00">
+                                      <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
+                                      <tadig-raex-iot:Rate type="I">{{ calling_to_me_cost_per_min }}</tadig-raex-iot:Rate>
+                                    </RateSpec>
+                                  </tadig-raex-iot:RateSpecList>
+                                </DurationChargedItem>
+                              </ChargedItem>
+                            </ChargedItemList>
+                          </AppTB>
+                        </ApplicableTBList>
+                      </AnyIAC>
+                    </IACInfo>
+                  </CTLSet>
+                </CTLSetList>
+              </DestinationBand>
+              <DestinationBand>
+                <tadig-raex-iot:DestinationBandName>RotW</tadig-raex-iot:DestinationBandName>
+                <CTLSetList>
+                  <CTLSet ctl1="1" ctl2="5" ctl3="3">
+                    <IACInfo>
+                      <AnyIAC>
+                        <ApplicableTBList>
+                          <AppTB>
+                            <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+                            <ChargedItemList>
+                              <ChargedItem>
+                                <DurationChargedItem>
+                                  <tadig-raex-iot:RateSpecList>
+                                    <RateSpec chargeType="00">
+                                      <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
+                                      <tadig-raex-iot:Rate type="I">{{ calling_to_other_destinations_cost_per_min }}</tadig-raex-iot:Rate>
+                                    </RateSpec>
+                                  </tadig-raex-iot:RateSpecList>
+                                </DurationChargedItem>
+                              </ChargedItem>
+                            </ChargedItemList>
+                          </AppTB>
+                        </ApplicableTBList>
+                      </AnyIAC>
+                    </IACInfo>
+                  </CTLSet>
+                </CTLSetList>
+              </DestinationBand>
+            </DestinationBandList>
+          </LocationRoamer>
+        </LocationRoamerList>
+      </Services>
+    </MOC>
+    <MTC>
+      <MTChargedAlways>
+        <MTRatingIntervalList>
+          <DurRatingInterval>
+            <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
+            <DurIntervalList>
+              <DurInterval applicator="0" scaleUnit="min" scaleValue="1"/>
+            </DurIntervalList>
+          </DurRatingInterval>
+        </MTRatingIntervalList>
+        <MTServices>
+          <ServiceList>
+            <Service>Telephony</Service>
+          </ServiceList>
+          <LocationBandList>
+            <LocationBand>
+              <LocationDefinition>
+                <AnyLocation/>
+              </LocationDefinition>
+              <CTLSetList>
+                <CTLSet ctl1="0" ctl2="6" ctl3="0">
+                  <AppTB>
+                    <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+                    <ChargedItemList>
+                      <ChargedItem>
+                        <DurationChargedItem>
+                          <tadig-raex-iot:MTRateSpecList>
+                            <RateSpec chargeType="00">
+                              <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
+                              <tadig-raex-iot:Rate type="I">{{ receiving_call_cost_per_min }}</tadig-raex-iot:Rate>
+                            </RateSpec>
+                          </tadig-raex-iot:MTRateSpecList>
+                        </DurationChargedItem>
+                      </ChargedItem>
+                    </ChargedItemList>
+                  </AppTB>
+                </CTLSet>
+              </CTLSetList>
+            </LocationBand>
+          </LocationBandList>
+        </MTServices>
+      </MTChargedAlways>
+    </MTC>
+    <MOSMS>
+      <LocationBandList>
+        <LocationBand>
+          <LocationDefinition>
+            <AnyLocation/>
+          </LocationDefinition>
+          <DestinationBandList>
+            <DestinationBand>
+              <tadig-raex-iot:DestinationBandName>RotW</tadig-raex-iot:DestinationBandName>
+              <CTLSetList>
+                <CTLSet ctl1="1" ctl2="0" ctl3="2">
+                  <AppTBFix>
+                    <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+                    <FixCharge>{{ sms_mo_cost_per_sms }}</FixCharge>
+                  </AppTBFix>
+                </CTLSet>
+              </CTLSetList>
+            </DestinationBand>
+          </DestinationBandList>
+        </LocationBand>
+      </LocationBandList>
+    </MOSMS>
+    <MTSMS>
+      <MTSMSNoCharge/>
+    </MTSMS>
+    <PSData>
+      <VolRatingIntervalList>
+        <VolRatingInterval>
+          <tadig-raex-iot:RatingIntervalName>Per 1 megabyte</tadig-raex-iot:RatingIntervalName>
+          <VolIntervalList>
+            <VolInterval applicator="0" scaleUnit="mbyte" scaleValue="1"/>
+          </VolIntervalList>
+        </VolRatingInterval>
+      </VolRatingIntervalList>
+      <LocationRoamerList>
+        <LocationRoamer>
+          <LocationDefinition>
+            <AnyLocation/>
+          </LocationDefinition>
+          <APNBandList>
+            <APNBand>
+              <BandName>Others</BandName>
+              <CTLSetList>
+                <CTLSet ctl1="11" ctl2="11" ctl3="1">
+                  <ApplicableTBList>
+                    <DataAppTB>
+                      <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
+                      <ChargedItemList>
+                        <ChargedItem>
+                          <Total degressive="false">
+                            <RateSpec>
+                              <tadig-raex-iot:RatingIntervalName>Per 1 megabyte</tadig-raex-iot:RatingIntervalName>
+                              <tadig-raex-iot:Rate type="I">{{ data_cost_per_mb }}</tadig-raex-iot:Rate>
+                            </RateSpec>
+                          </Total>
+                        </ChargedItem>
+                      </ChargedItemList>
+                    </DataAppTB>
+                  </ApplicableTBList>
+                </CTLSet>
+              </CTLSetList>
+            </APNBand>
+          </APNBandList>
+        </LocationRoamer>
+      </LocationRoamerList>
+    </PSData>
+  </tadig-raex-iot:CallTypes>
+</rating_table_file>
